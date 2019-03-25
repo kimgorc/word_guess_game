@@ -1,5 +1,3 @@
-
-
     // sets initial global variables
     var letterChoices = ["f", "r", "e", "n", "c", "h", "y"];
     var userScore = 0;
@@ -28,38 +26,48 @@
       }
     }
 
-    // This function evaluates who wins
-    function evaluator(player1, player2) {
-        if(player1==player2) {
-          alert("You tied!");
+    // This function evaluates the letters chosen
+    function evaluator(userGuess, letterChoices) {
+        if(userGuess==letterChoices[0]) {
+          alert("nice job!");
         }
-        else if(player1=="p"&&player2=="r") {
-          win(player1, player2);
+        else if(userGuess==letterChoices[1]) {
+          alert("nice job!");
         }
-        else if(player1=="r"&&player2=="s") {
-          win(player1, player2);
+        else if(userGuess==letterChoices[2]) {
+          alert("nice job!");
         }
-        else if(player1=="s"&&player2=="p") {
-          win(player1, player2);
+        else if(userGuess==letterChoices[3]) {
+          alert("nice job!");
+        }
+        else if(userGuess==letterChoices[4]) {
+          alert("nice job!");
+        }
+        else if(userGuess==letterChoices[5]) {
+          alert("nice job!");
+        }
+        else if(userGuess==letterChoices[6]) {
+          alert("nice job!");
         }
         else {
-          lose(player1, player2);
+          alert("nope! Try again!");
       }
     }
 
     // This function is called to add a point to the user score
-    function win(attempt1, attempt2) {
+    function score(userGuess, letterChoices) {
       userScore = userScore + 1;
       console.log(userScore);
       guessesLeft= guessesLeft - 1;
-      alert("You win! User: " + attempt1 + " beats Computer: " + attempt2);
+      alert("Nice Job!" + userGuess + "is one of the letters");
       userScoreView.textContent = userScore;
     }
 
     // This function is called to provide the lose message and change the number of guesses left
-    function lose(attempt1) {
+    function lose(userGuess) {
       guessesLeft  = guessesLeft - 1;
       console.log(guessesLeft );
+      alert ("try again" + userGuess + "isn't one of the letters")
     }
 
     // This function resets the score to zero
